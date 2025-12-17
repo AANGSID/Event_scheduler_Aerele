@@ -1,0 +1,205 @@
+/* ---------- ROOT THEME ---------- */
+:root {
+  --bg: #020617;
+  --panel: #0f172a;
+  --card: #111827;
+  --border: #1f2933;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --danger: #ef4444;
+  --success: #22c55e;
+}
+
+/* ---------- GLOBAL ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #020617, #020617 60%, #020617);
+  padding: 24px;
+  border-right: 1px solid var(--border);
+  animation: slideIn 0.6s ease;
+}
+
+.logo {
+  color: var(--accent);
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.sidebar a {
+  display: block;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.sidebar a:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.content {
+  flex: 1;
+  padding: 30px;
+  animation: fadeIn 0.6s ease;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* ---------- GRID & CARDS ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(56,189,248,0.15);
+}
+
+/* ---------- COUNTERS ---------- */
+.counter {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent);
+  animation: pop 0.6s ease;
+}
+
+/* ---------- FORMS ---------- */
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  background: #020617;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+}
+
+button {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, var(--accent), #0ea5e9);
+  color: #020617;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(56,189,248,0.4);
+}
+
+/* ---------- TABLE ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ---------- BADGE ---------- */
+.badge {
+  background: rgba(56,189,248,0.2);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* ---------- TOAST ---------- */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background: var(--panel);
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid var(--accent);
+  animation: toastSlide 4s ease forwards;
+}
+
+/* ---------- CALENDAR ---------- */
+#calendar {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid var(--border);
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes slideIn {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes toastSlide {
+  0% { transform: translateX(100%); opacity: 0; }
+  10% { transform: translateX(0); opacity: 1; }
+  90% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}

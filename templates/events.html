@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Events</h1>
+
+<div class="card">
+  <form method="POST" action="/add_event">
+    <input name="title" placeholder="Event title" required>
+    <input type="datetime-local" name="start" required>
+    <input type="datetime-local" name="end" required>
+    <textarea name="desc" placeholder="Description"></textarea>
+    <button>Add Event</button>
+  </form>
+</div>
+
+<div class="card">
+  <h3>Event List</h3>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Action</th>
+    </tr>
+    {% for e in events %}
+    <tr>
+      <td>{{ e.title }}</td>
+      <td>{{ e.start_time }}</td>
+      <td>{{ e.end_time }}</td>
+      <td>
+        <a href="/edit_event/{{ e.id }}">Edit</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

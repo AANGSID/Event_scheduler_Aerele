@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Resources</h1>
+
+<div class="card">
+  <form method="POST" action="/add_resource">
+    <input name="name" placeholder="Resource name" required>
+    <input name="type" placeholder="Resource type" required>
+    <button>Add Resource</button>
+  </form>
+</div>
+
+<div class="card">
+  <h3>Resource List</h3>
+  <ul class="list">
+    {% for r in resources %}
+      <li>
+        {{ r.name }}
+        <span class="badge">{{ r.type }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}

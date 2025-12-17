@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Resource Utilization Report</h1>
+
+<div class="grid">
+  <div class="card">
+    <canvas id="usageChart"></canvas>
+  </div>
+
+  <div class="card">
+    <h3>Detailed Report</h3>
+    <table>
+      <tr>
+        <th>Resource</th>
+        <th>Total Hours</th>
+        <th>Upcoming Events</th>
+      </tr>
+      {% for r in data %}
+      <tr>
+        <td>{{ r.name }}</td>
+        <td>{{ "%.1f"|format(r.hours) }}</td>
+        <td>{{ r.upcoming | join(", ") }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+<script>
+  const chartData = {
+    labels: [
+      {% for r in data %}"{{ r.name }}",{% endfor %}
+    ],
+    values: [
+      {% for r in data %}{{ r.hours }},{% endfor %}
+    ]
+  };
+</script>
+
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Scheduler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <h2 class="logo">EventSys</h2>
+    <nav>
+      <a href="/">Dashboard</a>
+      <a href="/events">Events</a>
+      <a href="/resources">Resources</a>
+      <a href="/allocate_page">Allocation</a>
+      <a href="/calendar">Calendar</a>
+      <a href="/report">Report</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "toast.html" %}
+
+<script src="{{ url_for('static', filename='js/toast.js') }}"></script>
+
+</body>
+</html>

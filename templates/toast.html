@@ -1,0 +1,9 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="toast-container">
+      {% for msg in messages %}
+        <div class="toast">{{ msg }}</div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
