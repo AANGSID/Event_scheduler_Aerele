@@ -3,8 +3,8 @@
 This repository contains screenshots and a demo video of the Flask Event Scheduling & Resource Allocation System.
 
 ### Dashboard
-![Dashboard]
-(https://github.com/AANGSID/Event_scheduler_Aerele/blob/fbf424ba55a97e23f08d176802193092da28fa80/dashboard.png)
+![Dashboard](https://github.com/AANGSID/Event_scheduler_Aerele/blob/fbf424ba55a97e23f08d176802193092da28fa80/dashboard.png?raw=true)
+
 
 ### 📦 Resource Management
 ![Resources](https://github.com/AANGSID/Event_scheduler_Aerele/blob/fbf424ba55a97e23f08d176802193092da28fa80/Resource.png)
