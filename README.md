@@ -22,5 +22,5 @@ This repository contains screenshots and a demo video of the Flask Event Schedul
 ![Report](https://github.com/AANGSID/Event_scheduler_Aerele/blob/fbf424ba55a97e23f08d176802193092da28fa80/Report.png)
 
 ### 🎥 Demo Video
-[Watch Demo Video](demo.mp4) 
+[Watch Demo Video](https://drive.google.com/file/d/1qcYomDvy7QHyVwBXD5quDe2JiBv0-CqB/view?usp=drive_link) 
  Will this work
